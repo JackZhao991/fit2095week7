@@ -114,5 +114,14 @@ module.exports = {
                 res.json(actor);
             }
         });
+    },
+
+    moviesByActors: function (req, res) {
+        Actor.findOne({name: req.params.name}).populate('movies', 'title').exec(function (err, actor) {
+            if(!err)
+            res.json(actor.movies);
+            else
+            res.status(400).json(err);
+        })
     }
 };

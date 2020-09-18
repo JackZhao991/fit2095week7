@@ -106,5 +106,5 @@ module.exports = {
             else
             status(400).json(err);
         });
-    }
+    },
 };

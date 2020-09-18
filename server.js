@@ -32,7 +32,7 @@ app.post('/actors/:id/movies', actors.addMovie);
 app.delete('/actors/:id', actors.deleteOne);
 app.delete('/actors/:id/movies', actors.deleteActorMovies);
 app.delete('/actors/:actorId/:movieId', actors.removeMovie);
-
+app.get('/moviesByActors/:name', actors.moviesByActors);
 
 //Movie RESTFul  endpoints
 app.get('/movies', movies.getAll);
